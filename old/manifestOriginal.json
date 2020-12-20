@@ -1,0 +1,12 @@
+{
+    "manifest_version": 2,
+    "name": "Dijital Şiddet Eklentisi",
+    "description": "Bu eklenti sayesinde dijital ortamda dijital şiddete uğramanız durumunda ekran görüntüsü ve bağlantı bilgisi ile birlikte ilgili kuruma şikayet etmenizi sağlar",
+    "version":"1.0",
+
+    "browser_action": {
+        "default_icon":"icon.png",
+        "default_popup": "popup.html",
+        "default_title": "Dijital Şiddet"
+    }
+}
