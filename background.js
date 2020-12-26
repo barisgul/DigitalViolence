@@ -6,13 +6,17 @@
 // query param to the url that displays the screenshot.
 // Note: It's OK that this is a global variable (and not in localStorage),
 // because the event page will stay open as long as any screenshot tabs are
-// open.
-var id = 100;
+// open. 
+var id = 100; 
+ 
+var newURL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname + window.location.search
 
 // Listen for a click on the camera icon. On that click, take a screenshot.
-chrome.browserAction.onClicked.addListener(function() { 
+chrome.browserAction.onClicked.addListener(function(tab) { 
+  var link = tab.url;
   chrome.tabs.captureVisibleTab(function(screenshotUrl) {
-    var viewTabUrl = chrome.extension.getURL('screenshot.html?id=' + id++)
+    
+    var viewTabUrl = chrome.extension.getURL('screenshot.html?id=' + id++) 
     var targetId = null;
 
     chrome.tabs.onUpdated.addListener(function listener(tabId, changedProps) {
@@ -26,7 +30,8 @@ chrome.browserAction.onClicked.addListener(function() {
       // There is nothing we need to do for future onUpdated events, so we
       // use removeListner to stop getting called when onUpdated events fire.
       chrome.tabs.onUpdated.removeListener(listener);
-
+ 
+ 
       // Look through all views to find the window which will display
       // the screenshot.  The url of the tab which will display the
       // screenshot includes a query parameter with a unique id, which
@@ -36,13 +41,17 @@ chrome.browserAction.onClicked.addListener(function() {
         var view = views[i];
         if (view.location.href == viewTabUrl) {
           view.setScreenshotUrl(screenshotUrl); 
+          view.setCurrentUrl("BG-URL-"+link);
           break;
         }
       }
     });
-
     chrome.tabs.create({url: viewTabUrl}, function(tab) {
       targetId = tab.id;      
-    });
+    });     
+
   });
+ 
 });
+ 
+

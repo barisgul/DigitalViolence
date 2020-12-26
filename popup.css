@@ -1,0 +1,21 @@
+body { 
+    padding: 15px;
+    background-color:azure;
+}
+
+button{
+    height: 50px;
+    width: 100px;
+    margin-left: 5px;
+}
+
+img {
+    max-height: 300px;
+    width: auto;
+    margin: 25px 5px 10px;
+}
+
+h2{
+  text-align: center;
+  color: darkmagenta;  
+}
