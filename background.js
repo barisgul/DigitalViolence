@@ -9,8 +9,6 @@
 // open. 
 var id = 100; 
  
-var newURL = window.location.protocol + "//" + window.location.host + "/" + window.location.pathname + window.location.search
-
 // Listen for a click on the camera icon. On that click, take a screenshot.
 chrome.browserAction.onClicked.addListener(function(tab) { 
   var link = tab.url;
@@ -41,7 +39,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
         var view = views[i];
         if (view.location.href == viewTabUrl) {
           view.setScreenshotUrl(screenshotUrl); 
-          view.setCurrentUrl("BG-URL-"+link);
+          view.setCurrentUrl(link);
           break;
         }
       }
