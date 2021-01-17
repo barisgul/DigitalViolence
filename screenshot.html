@@ -1,34 +1,43 @@
 <html> 
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" >  
   <link rel="stylesheet" href="screenshot.css">
   <script src="screenshot.js"></script> 
   <title>Dijital şiddet</title>
 </head>
 <body>  
-  <b>Ekran Görüntüsü</b>
-  <p> 
-    <img id="target" src="white.png" height="50%" width="50%">
-  <p>
-  
-  <p><b>Kaynak Url: </b><a id="url"></a></p>
-    <form class="form-style-4" action="" method="post">
-      <label for="field1">
-      <span>Adınız ve Soyadınız</span><input type="text" name="field1" required="true" />
-      </label>
-      <label for="field2">
-      <span>Email Adresiniz</span><input type="email" name="field2" required="true" />
-      </label>
-      <label for="field3">
-      <span>Konu</span><input type="text" name="field3" required="true" />
-      </label>
-      <label for="field4">
-      <span>Mesaj</span><textarea name="field4" onkeyup="adjust_textarea(this)" required="true"></textarea>
-      </label>
-      <label>
-      <span> </span><input type="submit" value="Gönder" />
-      </label>
-      </form>
 
+  <div class="digital-violence">
+    <div class="screenshot">
+      <h2>Ekran Görüntüsü</h2>
+      <p> 
+        <img id="target" src="white.png" height="50%" width="50%"> 
+      <p>      
+      <p><b>Kaynak Url: </b><a id="url"></a></p>
+    </div>
+
+    <div class="form-information" >
+      <h2>Form Bilgileri</h2>
+      <form class="form-style-9">
+        <ul>
+        <li>
+            <input type="text" name="field1" class="field-style field-split align-left" placeholder="Ad Soyad" />
+            <input type="email" name="field2" class="field-style field-split align-right" placeholder="Email" />        
+        </li> 
+
+        <li>
+        <input type="text" name="field3" class="field-style field-full align-none" placeholder="Konu" />
+        </li>
+
+        <li>
+        <textarea name="field5" class="field-style" placeholder="Mesaj"></textarea>
+        </li>
+        <li>
+        <input type="submit" id = "submit" value="Gönder" />
+        </li>
+        </ul>
+        </form> 
+    </div>
+  </div>
   </body>
 </html>
