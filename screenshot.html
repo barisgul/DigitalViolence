@@ -1,43 +1,47 @@
-<html> 
+<html>
+
 <head>
-  <meta charset="UTF-8" >  
+  <meta charset="UTF-8">
   <link rel="stylesheet" href="screenshot.css">
-  <script src="screenshot.js"></script> 
+  <script src="screenshot.js"></script>
   <title>Dijital şiddet</title>
 </head>
-<body>  
+
+<body>
 
   <div class="digital-violence">
     <div class="screenshot">
       <h2>Ekran Görüntüsü</h2>
-      <p> 
-        <img id="target" src="white.png" height="50%" width="50%"> 
-      <p>      
+      <p>
+        <img id="target" src="white.png" height="50%" width="50%">
+      <p>
       <p><b>Kaynak Url: </b><a id="url"></a></p>
     </div>
 
-    <div class="form-information" >
+    <div class="form-information">
       <h2>Form Bilgileri</h2>
       <form class="form-style-9">
         <ul>
-        <li>
-            <input type="text" name="field1" class="field-style field-split align-left" placeholder="Ad Soyad" />
-            <input type="email" name="field2" class="field-style field-split align-right" placeholder="Email" />        
-        </li> 
+          <li>
+            <input type="text" name="name_surname" class="field-style field-split align-left" placeholder="Ad Soyad" />
+            <input type="email" name="email" class="field-style field-split align-right" placeholder="Email" />
+          </li>
 
-        <li>
-        <input type="text" name="field3" class="field-style field-full align-none" placeholder="Konu" />
-        </li>
+          <li>
+            <input type="text" name="subject" class="field-style field-full align-none" placeholder="Konu" />
+          </li>
 
-        <li>
-        <textarea name="field5" class="field-style" placeholder="Mesaj"></textarea>
-        </li>
-        <li>
-        <input type="submit" id = "submit" value="Gönder" />
-        </li>
+          <li>
+            <textarea name="message" class="field-style" placeholder="Mesaj"></textarea>
+          </li>
+          <li>
+            <input type="submit" id="submit" value="Gönder" />
+          </li>
         </ul>
-        </form> 
+      </form>
     </div>
   </div>
-  </body>
+
+</body>
+
 </html>
