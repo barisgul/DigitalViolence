@@ -4,16 +4,20 @@
   "description": "Bu eklenti dijital ortamda şiddete uğramanız durumunda ekran görüntüsü ve bağlantı bilgisi ile birlikte ilgili kuruma şikayet etmenizi sağlar",
   "background": {
     "persistent": false,
-    "scripts": ["background.js"]
+    "scripts": [
+      "background.js"
+    ]
   },
   "browser_action": {
     "default_icon": "icon.png",
-    "default_title": "Ekran görüntüsü al!" 
+    "default_title": "Ekran görüntüsü al!"
   },
   "options_page": "options.html",
   "permissions": [
-    "activeTab" ,
-    "tabs"
+    "activeTab",
+    "tabs",
+    "http://*/",
+    "https://*/"
   ],
   "manifest_version": 2
 }
