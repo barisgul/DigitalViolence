@@ -2,6 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+const errorStatusCode = [300, 400, 401, 402, 403, 404, 405, 500, 501, 502]
+
 const Url = "https://35sooetx1a.execute-api.eu-west-1.amazonaws.com/python-mail"
 function setScreenshotUrl(url) {
   document.getElementById('target').src = url;
@@ -39,6 +41,25 @@ function prepareData() {
 
   });
 }
+function sendMail(data) {
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      window.location.href = "./messages/success.html"
+    }
+    else if (errorStatusCode.includes(this.status)) {
+      window.location.href = "./messages/error.html"
+    }
+  };
+
+
+  request.open("POST", Url, true);
+  request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+  request.setRequestHeader("Access-Control-Allow-Origin", Url)
+  request.setRequestHeader("Access-Control-Allow-Origin", "*")
+  request.send(JSON.stringify(data));
+
+}
 
 document.addEventListener('DOMContentLoaded', function () {
   var button = document.getElementById('submit');
@@ -49,14 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
     prepareData()
       .then((re) => {
 
-        var request = new XMLHttpRequest();
-
-        request.open("POST", Url, true);
-        request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-        request.setRequestHeader("Access-Control-Allow-Origin", Url)
-        request.setRequestHeader("Access-Control-Allow-Origin", "*")
-
-        request.send(JSON.stringify(re));
+        sendMail(re)
 
       })
       .catch((er) => { ; console.log(er); })
