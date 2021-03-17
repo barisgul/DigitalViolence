@@ -4,10 +4,9 @@
 
 const errorStatusCode = [300, 400, 401, 402, 403, 404, 405, 500, 501, 502]
 
-const Url = "https://35sooetx1a.execute-api.eu-west-1.amazonaws.com/python-mail"
+const Url = "https://2120epnw02.execute-api.us-east-2.amazonaws.com/DigitalViolence"
 function setScreenshotUrl(url) {
-  document.getElementById('target').src = url;
-  //console.log("setScreenshotUrl:"+url);
+  document.getElementById('target').src = url; 
 }
 
 function setCurrentUrl(url) {
