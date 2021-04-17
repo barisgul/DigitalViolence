@@ -3,44 +3,225 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="screenshot.css">
+   
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="screenshot.js"></script>
-  <title>Dijital şiddet</title>
-</head>
+  <title>Dijital şiddet ile mücadele</title>
+  
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    /* Create two equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 50%;
+      padding: 10px;
+      height: 300px; /* Should be removed. Only for demonstration */
+    }
+    
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    body {
+      background-color: #35b599;
+      }
 
-<body>
+      .header {
+  padding: 10px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  font-size: 30px;
+}
+      h1 {
+      text-align: center;
+      color: whitesmoke;
+      font: optional;
+      font-size: xx-large;
+    }
+    h2 {
+      color: whitesmoke;
+      font: optional;
+      font-size: x-large;
+    }
+    h3 {
+      color: whitesmoke;
+      font: optional;
+      font-size: medium;
+    } 
 
-  <div class="digital-violence">
-    <div class="screenshot">
-      <h2>Ekran Görüntüsü</h2>
-      <p>
-        <img id="target" src="white.png" height="50%" width="50%">
-      <p>
-      <p><b>Kaynak Url: </b><a id="url"></a></p>
-    </div>
+    .fa {
+  padding: 40px;
+  font-size: 30px;
+  width: 30px;
+  height: 30;
+  text-align: center;
+  text-decoration: none;
+  margin: 1px 1px;
+}
 
-    <div class="form-information">
-      <h2>Form Bilgileri</h2>
-      <form class="form-style-9">
-        <ul>
-          <li>
-            <input type="text" name="name_surname" class="field-style field-split align-left" placeholder="Ad Soyad" />
-            <input type="email" name="email" class="field-style field-split align-right" placeholder="Email" />
-          </li>
+.fa:hover {
+    opacity: 0.7;
+}
 
-          <li>
-            <input type="text" name="subject" class="field-style field-full align-none" placeholder="Konu" />
-          </li>
+.fa-twitter { 
+  color: white;
+}
 
-          <li>
-            <textarea name="message" class="field-style" placeholder="Mesaj"></textarea>
-          </li>
-          <li>
-            <input type="submit" id="submit" value="Gönder" />
-          </li>
-        </ul>
-      </form>
-    </div>
+.fa-instagram { 
+  color: white;
+}  
+ 
+
+#footer{  
+	width:100%;
+	clear:both;
+	position: relative;
+	overflow: hidden;
+	margin: 0 auto;
+    padding: 20px; 
+}
+
+.wrapper{
+  background-color: olive;
+	clear:both;
+	position: relative;
+	overflow: hidden;
+}
+
+.footer-col a {
+  color: rgba(0,0,0,0.75);
+}
+
+.content {
+  height: 45vh;
+  background: #1abc9c;
+}
+
+.footer-content-wrapper {
+  width: 80%;
+  margin: 1em auto;    
+}
+
+.footer-col {
+  display: inline-block;
+  padding: 0.5em 0.1em 0.5em 1em;
+  box-sizing: border-box;
+  border-right: solid 1px #bbb; 
+}
+.footer-col:nth-child(3) {
+  border: none;
+}
+
+.ta-l {
+  text-align: left;
+}
+.flt {
+  float: left;
+}
+
+.flt:nth-child(3):after {
+   content: " "; 
+   visibility: hidden; 
+   display: block; 
+   height: 1em; 
+   clear: both;
+}
+
+.large-25 {
+  width: 33%;
+}
+
+.footer-col a {
+  display: block;
+  margin: 0.3em 0;
+}
+
+@media (max-width: 550px) {
+  .small-50 {
+    width: 50%;  
+  }
+  .footer-col:nth-child(2) {
+    border: none;
+  }
+}
+
+@media (max-width: 300px) {
+  .tiny-100 {
+    width: 100%;
+  }
+  .footer-col { 
+    border: none;
+  }
+}
+    </style>
+</head> 
+<body>  
+
+  <div class="header">
+    <h1 class="masthead-heading text-uppercase mb-0"><u>DİJİTAL ŞİDDET İlE MÜCADELE</u></h1>
+    <div class="digital-violence" > 
+      <div class="row" >
+        <div class="column" >
+          <div class="screenshot">
+            <h2>Ekran Görüntüsü</h2>
+            <h3><u>Url: </u><a id="url"></a></h3> 
+            <p>
+              <img id="target" src="white.png" height="200%" width="100%">
+            <p>
+            
+          </div>
+        </div>
+        <div class="column" height="100%" width="100%">
+          <div class="form-information" >
+            <h2>Form Bilgileri</h2>
+            <form class="form-style-9">
+              <ul>
+                <li>
+                  <input type="text" name="name_surname" class="field-style field-split align-left" placeholder="Ad Soyad" />
+                  <input type="email" name="email" class="field-style field-split align-right" placeholder="Email" />
+                </li>
+      
+                <li>
+                  <input type="text" name="subject" class="field-style field-full align-none" placeholder="Konu" />
+                </li>
+      
+                <li>
+                  <textarea name="message" class="field-style" placeholder="Mesaj"></textarea>
+                </li>
+                <li>
+                  <input type="submit" id="submit" value="Gönder" />
+                </li>
+              </ul>
+            </form>
+          </div>
+        </div>
+      </div>       
+    </div> 
   </div>
+  <div class="content"></div>
+  <footer>
+    <div class="footer-content-wrapper">
+      <div class="footer-col large-25 small-50 tiny-100 ta-l flt">        
+        <a href="https://www.unfpa.org/"> <img class="masthead-avatar mb-5" src="images/UNFPA_logo.svg" height="150" width="250" alt="UNFPA" > </a>        
+      </div>
+      <div class="footer-col large-25 small-50 tiny-100 ta-l flt">
+        <a href="https://www.tbid.org.tr/"> <img class="masthead-avatar mb-5" src="images/tbid-logo.png" height="150" width="150" alt="TBİD"> </a>        
+      </div>
+      <a href="https://twitter.com/dijitalsiddet" class="fa fa-twitter"></a> 
+      <a href="https://www.instagram.com/dijitalsiddet/" class="fa fa-instagram"></a> 
+      <div class="clearfix"></div>
+    </div> </br></br></br></br></br>
+    <h3 align="center">
+      Dijital Şiddet ile Mücadele Projesi; <a href="https://www.tbid.org.tr" target="_blank">Toplumsal Bilgi ve İletişim Derneği (TBİD)</a> 
+        tarafından, <a href="https://turkey.unfpa.org/tr" target="_blank">Birleşmiş Milletler Nüfus Fonu (UNFPA) Türkiye</a>'nin desteği ile yürütülmektedir.
+    </h3>  
+  </footer> 
 
 </body>
 

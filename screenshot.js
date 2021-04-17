@@ -63,7 +63,6 @@ function sendMail(data) {
 document.addEventListener('DOMContentLoaded', function () {
   var button = document.getElementById('submit');
 
-
   button.addEventListener('click', function (e) {
     e.preventDefault()
     prepareData()
